@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_line_extra_dp_6">3.6dp</dimen>
+
+    <dimen name="title_bar_height">@dimen/dp_56</dimen>
+    <dimen name="title_bar_text_margin_start">@dimen/dp_80</dimen>
+    <dimen name="title_bar_text_margin_end">@dimen/dp_80</dimen>
+    <dimen name="title_bar_image_size">@dimen/dp_48</dimen>
+    <dimen name="title_bar_image_padding">@dimen/dp_8</dimen>
+    <dimen name="title_bar_padding_start">@dimen/dp_16</dimen>
+    <dimen name="title_bar_padding_end">@dimen/dp_16</dimen>
+</resources>
