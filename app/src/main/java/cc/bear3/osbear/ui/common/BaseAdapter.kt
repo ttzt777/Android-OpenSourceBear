@@ -2,18 +2,18 @@ package cc.bear3.osbear.ui.common
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import cc.bear3.baseadapter.*
 import cc.bear3.osbear.databinding.ItemDefaultEmptyBinding
 import cc.bear3.osbear.databinding.ItemDefaultErrorBinding
 import cc.bear3.osbear.databinding.ItemDefaultLoadingBinding
 import cc.bear3.osbear.databinding.ItemDefaultNomoreBinding
+import cc.bear3.util.statusadapter.*
 
 /**
  * Description:
  * Author: TT
  * Since: 2020-02-28
  */
-abstract class BaseAdapter<T, VH : AContentViewHolder> :ABaseAdapter<T, VH>() {
+abstract class BaseAdapter<T, VH : AContentViewHolder> :AStatusAdapter<T, VH>() {
 
     override fun onViewAttachedToWindow(holder: AViewHolder) {
         if (holder is DefaultLoadingViewHolder) {
