@@ -1,9 +1,9 @@
 package cc.bear3.osbear.app
 
-import cc.bear3.baseadapter.ABaseAdapter
-import cc.bear3.baseadapter.AContentViewHolder
 import cc.bear3.osbear.http.HttpError
 import cc.bear3.osbear.ui.common.BaseAdapter
+import cc.bear3.util.statusadapter.AContentViewHolder
+import cc.bear3.util.statusadapter.AdapterStatus
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -86,7 +86,7 @@ class RefreshProxy<T> constructor(
             return
         }
         loadingFlag = true
-        if (adapter.status == ABaseAdapter.Status.Loading) {
+        if (adapter.status == AdapterStatus.Loading) {
             with(layout) {
                 setEnableRefresh(false)
                 setEnableLoadMore(false)
@@ -131,10 +131,10 @@ class RefreshProxy<T> constructor(
         var enableLoadMore = enableLoadMore
         adapter.dataRefresh(dataList)
 
-        if (adapter.status == ABaseAdapter.Status.Null || adapter.status == ABaseAdapter.Status.Loading) {
+        if (adapter.status == AdapterStatus.Null || adapter.status == AdapterStatus.Loading) {
             when (error) {
-                HttpError.SUCCESS -> adapter.status = ABaseAdapter.Status.Content
-                else -> adapter.status = ABaseAdapter.Status.Error
+                HttpError.SUCCESS -> adapter.status = AdapterStatus.Content
+                else -> adapter.status = AdapterStatus.Error
             }
         }
 
@@ -143,7 +143,7 @@ class RefreshProxy<T> constructor(
             when {
                 dataList.isNullOrEmpty() -> {
                     enableLoadMore = false
-                    adapter.status = ABaseAdapter.Status.Empty
+                    adapter.status = AdapterStatus.Empty
                 }
                 dataList.size < pageSize -> {
                     enableLoadMore = false
@@ -151,7 +151,7 @@ class RefreshProxy<T> constructor(
             }
         } else {
             pageNum = pageNumBak
-            if (adapter.status === ABaseAdapter.Status.Error) {
+            if (adapter.status === AdapterStatus.Error) {
                 enableLoadMore = false
             }
         }

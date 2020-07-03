@@ -3,6 +3,7 @@ package cc.bear3.osbear.http
 import cc.bear3.osbear.BuildConfig
 import cc.bear3.osbear.app.BASE_API_URL
 import cc.bear3.osbear.http.api.AccountApi
+import cc.bear3.osbear.http.api.NewsApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -26,6 +27,8 @@ object HttpManager {
     private const val TIMEOUT = 10L
 
     val accountApi: AccountApi by lazy { getApi(AccountApi::class.java) }
+
+    val newsApi: NewsApi by lazy { getApi(NewsApi::class.java) }
 
     // OkHttp 客户端
     private val mOkHttpClient: OkHttpClient by lazy {

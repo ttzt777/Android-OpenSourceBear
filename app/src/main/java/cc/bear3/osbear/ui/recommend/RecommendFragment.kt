@@ -41,8 +41,8 @@ class RecommendFragment : BaseFragment() {
 
         viewPager.adapter = ViewPagerAdapter<Fragment>(childFragmentManager).apply {
             val titles = listOf(
-                getString(R.string.app_last_blog),
                 getString(R.string.app_last_news),
+                getString(R.string.app_last_blog),
                 getString(R.string.app_last_post)
             )
 

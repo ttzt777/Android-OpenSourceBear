@@ -16,3 +16,5 @@ internal const val AUTHORIZE_URL = "${BASE_URL}action/oauth2/authorize?client_id
 internal const val AUTO_REFRESH_TOKEN_LIMIT = 60 * 1000
 
 internal const val SP_NAME_ACCOUNT = "account_info"
+
+internal const val PAGE_SIZE_DEFAULT = 20
